@@ -1,7 +1,7 @@
 :root {
 	--bg-color: #1E1E2E;
-  --hover-color: #F8BD96;
-  --not-hover-color: #C3BAC6;
+	--hover-color: #ABE9B3;
+ 	--not-hover-color: #C3BAC6;
 } 
 .body {
   height:100%;
