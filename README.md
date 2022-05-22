@@ -1,6 +1,6 @@
 # StartPage
 
-![video](https://raw.githubusercontent.com/c3r5b8/StartPage/master/assets/video.gif)
+Live [preview](https://c3r5b8.github.io/StartPage/)
 
 ### Instaling
 
@@ -11,3 +11,5 @@
 5. Replace file location of index.html in newTabURL variable
 6. Copy mozilla.cfg to /usr/lib/firefox/
 7. Copy local-settings.js to /usr/lib/firefox/defaults/pref/
+
+![video](https://raw.githubusercontent.com/c3r5b8/StartPage/master/assets/video.gif)
