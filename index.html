@@ -1,51 +1,763 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="style.css">
-	<title>Startpage</title>
-	<link rel="icon" href="icon.svg">
-</head>
+<meta charset="utf-8" />
+<meta name="color-scheme" content="dark light" />
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>~/.startpage</title>
+<link rel="icon" href="icon.svg">
+<style>
+  :root {
+    --color-background: #1e1e2e;
+    --color-rain: #cba6f7;
+    --color-text-subtle: #cdd6f4;
+    --color-text: #b4befe;
+    --font-family: -apple-system, Helvetica, sans-serif;
+    --font-size-1: 1rem;
+    --font-size-2: 3rem;
+    --font-size-base: clamp(16px, 1.2vw, 18px);
+    --font-weight-bold: 700;
+    --font-weight-normal: 400;
+    --line-height-base: 1.4;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 4rem;
+    --transition-speed: 200ms;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --color-background: #eff1f5;
+      --color-rain: #bcc0cc;
+      --color-text-subtle: #6c6f85;
+      --color-text: #4c4f69;
+    }
+  }
+</style>
 
-<body class="body">
-	<div class="links">
-		<div class="link">
-			<a href="https://www.github.com/">
-				<svg
-   					width="120"
-   					height="120"
-   					viewBox="0 0 120 120">
-   					 <path
-   					    d="M 59.999233,1.4815 C 26.866214,1.4815 0,28.341802 0,61.480835 c 0,26.508839 17.191847,49.000385 41.031893,56.934155 2.998624,0.55541 4.098531,-1.3014 4.098531,-2.88616 0,-1.42978 -0.05548,-6.15693 -0.08141,-11.17053 -16.692168,3.62954 -20.213218,-7.079292 -20.213218,-7.079292 -2.729378,-6.934235 -6.663009,-8.780734 -6.663009,-8.780734 -5.443846,-3.723953 0.410411,-3.647346 0.410411,-3.647346 6.025143,0.423284 9.198415,6.184218 9.198415,6.184218 5.351438,9.171774 14.035637,6.520917 17.459522,4.987804 0.539516,-3.876971 2.094433,-6.525565 3.810357,-8.023899 C 35.724557,86.482841 21.71386,81.337812 21.71386,58.347244 c 0,-6.549706 2.34454,-11.904106 6.182748,-16.105959 -0.622971,-1.511255 -2.676816,-7.612833 0.582192,-15.877457 0,0 5.038331,-1.612167 16.503278,6.150701 4.786088,-1.329425 9.919643,-1.996309 15.018724,-2.020161 5.099082,0.02268 10.235343,0.690736 15.030357,2.020161 11.452052,-7.762868 16.482917,-6.150701 16.482917,-6.150701 3.265909,8.264624 1.212431,14.366202 0.589455,15.877457 3.84717,4.201853 6.173987,9.556253 6.173987,16.105959 0,23.046195 -14.036576,28.118389 -27.397278,29.603788 2.152112,1.861992 4.07088,5.51449 4.07088,11.112348 0,8.02818 -0.06845,14.48919 -0.06845,16.46545 0,1.59766 1.079017,3.46706 4.120362,2.87887 C 102.83116,110.46497 120,87.981733 120,61.480835 120,28.341802 93.137764,1.4815 60.000775,1.4815 Z M 21.707952,86.610566 c -0.254891,0.0019 -0.469364,0.107036 -0.550167,0.298356 -0.141086,0.299074 0.102236,0.705664 0.538508,0.902393 0.427226,0.204774 0.896927,0.115767 1.029017,-0.183345 0.150123,-0.299074 -0.09887,-0.709554 -0.534168,-0.905295 -0.163086,-0.07688 -0.330217,-0.113235 -0.48319,-0.112101 z m 2.44224,2.063819 c -0.151521,-7.56e-4 -0.289814,0.04449 -0.395879,0.139691 -0.290267,0.26812 -0.217436,0.829024 0.176013,1.247324 0.378531,0.419316 0.939318,0.543269 1.22547,0.277984 0.299036,-0.269254 0.221669,-0.824073 -0.171817,-1.247327 C 24.732489,88.824202 24.42007,88.67584 24.15,88.674347 Z m 2.351997,3.068084 c -0.113802,0.0057 -0.221371,0.04086 -0.314382,0.104769 -0.3761,0.25629 -0.374929,0.896141 -0.0083,1.430702 0.371603,0.533548 0.972805,0.772978 1.340435,0.51668 0.375084,-0.261354 0.375383,-0.901296 0.0083,-1.443806 -0.282406,-0.396808 -0.686287,-0.62674 -1.027529,-0.608379 z m 2.903597,3.410113 c -0.210104,0.0057 -0.397909,0.07631 -0.52831,0.218268 -0.328857,0.362683 -0.182514,1.048229 0.342047,1.531113 0.512678,0.495696 1.21389,0.594073 1.54277,0.231496 0.349757,-0.358677 0.191811,-1.051159 -0.328933,-1.534042 -0.314834,-0.29915 -0.699583,-0.453786 -1.027559,-0.446831 z m 4.311039,2.608154 c -0.472573,0.0026 -0.865693,0.216037 -0.969313,0.563263 -0.137159,0.474939 0.308145,1.024263 0.986775,1.229866 0.679608,0.199672 1.352938,-0.01134 1.499115,-0.481754 0.14109,-0.477929 -0.304819,-1.02511 -0.982439,-1.229866 -0.181947,-0.05662 -0.363213,-0.08281 -0.534138,-0.08141 z m 9.854805,0.20674 c -0.09547,0.0015 -0.194344,0.01134 -0.29401,0.02797 -0.69648,0.128164 -1.199868,0.624435 -1.1134,1.119236 0.08844,0.477838 0.732756,0.777286 1.42924,0.649137 0.708423,-0.132094 1.204596,-0.628607 1.119254,-1.110504 -0.07775,-0.421739 -0.557427,-0.695048 -1.141084,-0.685501 z m -4.759306,0.587992 c -0.700392,0.02532 -1.247293,0.426414 -1.247293,0.918391 0.0083,0.486853 0.588162,0.887241 1.305513,0.870341 0.713404,-0.008 1.290417,-0.419227 1.273519,-0.914021 0,-0.490828 -0.584867,-0.888793 -1.298253,-0.874711 -0.01134,1.97e-4 -0.02268,-3.78e-4 -0.03364,0 z" />
-				</svg>
-			</a>
-		</div>
-		<div class="link">
-			<a href="https://keep.google.com/">
-				<svg
-				   height="120"
-				   width="120"
-				   viewBox="12 0.19 120 120">
-				  <path
-				     d="M 60.000003,0 C 35.160001,0 15,20.160001 15,45 15,67.92 30.957189,80.16 37.617189,84 h 44.76563 C 89.042819,80.16 105,67.92 105,45 105,20.160001 84.839999,0 60.000003,0 Z M 35.992189,90 v 12 h 48 V 90 Z m 12.015625,18 c 0,6.6 5.4,12 12.000001,12 6.599999,0 11.999999,-5.4 11.999999,-12 z"/>
-				</svg>
-			</a>
-		</div>
-		<div class="link">
-			<a href="https://mail.google.com/">
-				<svg
-				   height="120"
-				   width="120"
-				   viewBox="0 0 120 120">
-				    <path
-				       d="M 12.320312 14.988281 C 5.9603894 14.986549 0 20.01273 0 27.285156 L 0 38.193359 L 0 96.830078 C 0 101.35734 3.6680041 105.01172 8.1816406 105.01172 L 27.273438 105.01172 L 27.273438 58.648438 L 60 83.193359 L 92.726562 58.648438 L 92.726562 105.01172 L 111.81836 105.01172 C 116.34563 105.01172 120 101.3437 120 96.830078 L 120 38.193359 L 120 27.285156 C 120 17.166998 108.44965 11.398629 100.36328 17.466797 L 92.726562 23.193359 L 60 47.738281 L 27.273438 23.193359 L 19.636719 17.466797 C 17.358594 15.760125 14.808978 14.988959 12.320312 14.988281 z " />
-				</svg>
-			</a>
-		</div>
-		<div class="link">
-			<a href="https://reddit.com/">
-				<svg viewBox="12 .19 120 120" width="120px" height="120px"><path d="M72 .19a60 60 0 0 0-60 60 60 60 0 0 0 60 60 60 60 0 0 0 60-60 60 60 0 0 0-60-60Zm25.06 23.77a6.234 6.234 0 0 1 6.229 6.23 6.233 6.233 0 0 1-6.229 6.229 6.227 6.227 0 0 1-6.23-5.942L77.8 27.684l-4.01 18.759c9.165.358 17.399 3.15 23.413 7.446a8.795 8.795 0 0 1 6.086-2.434 8.724 8.724 0 0 1 8.735 8.736 8.818 8.818 0 0 1-5.155 8.018c.143.86.215 1.79.215 2.649 0 13.532-15.68 24.416-35.012 24.416S37.06 84.32 37.06 70.858c0-.93.072-1.79.215-2.649-3.007-1.36-5.156-4.367-5.156-7.947 0-4.797 3.867-8.736 8.736-8.736 2.363 0 4.51.931 6.086 2.435 6.086-4.368 14.462-7.16 23.77-7.447l4.439-20.906c.072-.43.287-.788.645-1.003.286-.215.715-.286 1.145-.214l14.535 3.078a6.227 6.227 0 0 1 5.585-3.509zM58.253 60.19a6.233 6.233 0 0 0-6.229 6.23c0 3.436 2.792 6.3 6.229 6.228a6.234 6.234 0 0 0 6.23-6.229 6.234 6.234 0 0 0-6.23-6.228zm27.494.072a6.233 6.233 0 0 0-6.228 6.229 6.234 6.234 0 0 0 6.228 6.23c3.437 0 6.229-2.865 6.229-6.23a6.233 6.233 0 0 0-6.229-6.229zm-27.35 19.922c-.412 0-.825.162-1.147.484a1.599 1.599 0 0 0 0 2.29c4.225 4.225 12.388 4.583 14.822 4.583 2.363 0 10.525-.287 14.82-4.583a1.741 1.741 0 0 0 0-2.29 1.599 1.599 0 0 0-2.29 0c-2.65 2.72-8.449 3.651-12.53 3.651-4.081 0-9.81-.93-12.53-3.651a1.615 1.615 0 0 0-1.145-.484z" /></svg>
-			</a>
-		</div>
-	</div>
-</body>
-</html>
+<script>
+  const CONFIG = {
+    commandPathDelimiter: '/',
+    commandSearchDelimiter: ' ',
+    defaultSearchTemplate: 'https://duckduckgo.com/?q={}',
+    openLinksInNewTab: false,
+    rainColumns: 200,
+    rainFade: 0.2,
+    rainFrameRate: 1000 / 20,
+    rainResilience: 0.87,
+    rainSpeed: 0.85,
+    suggestionLimit: 6,
+  };
+
+  const COMMANDS = new Map([
+    [
+      'g',
+      {
+        name: 'GitHub',
+        searchTemplate: '/search?q={}',
+        suggestions: [
+          'g/catppuccin/catppuccin',
+        ],
+        url: 'https://github.com',
+      },
+    ],
+    [
+      'd',
+      {
+        name: 'Go docs',
+        searchTemplate: '/search?q={}',
+        url: 'https://pkg.go.dev',
+      },
+    ],
+    [
+      'e',
+      {
+        name: 'Eolymp',
+        suggestions: [
+          'e/groups/',
+        ],
+        url: 'https://www.eolymp.com',
+      }
+    ],
+    [
+      'i',
+      {
+        name: 'ChatGPT',
+        url: 'https://chat.openai.com/chat',
+      },
+    ],
+    [
+      'a',
+      {
+        name: 'Arch linux',
+        searchTemplate: '/packages/?sort=&q={}',
+        url : 'https://archlinux.org',
+      },
+    ],
+    [
+      'q',
+      {
+        name: 'Arch Wiki',
+        searchTemplate: '/index.php?search={}',
+        suggestions: [
+          'q/title/List_of_applications',
+          'q/title/General_recommendations',
+        ],
+        url: 'https://wiki.archlinux.org',
+      },
+    ],
+    [
+      'u',
+      {
+        name: 'AUR',
+        searchTemplate: '/packages?K={}',
+        url: 'https://aur.archlinux.org'
+      },
+    ],
+    [
+      'l',
+      {
+        name: 'Translate',
+        searchTemplate: '/?sl=auto&tl=uk&text={}&op=translate',
+        url: 'https://translate.google.com',
+      },
+    ],
+    [
+      'r',
+      {
+        name: 'Reddit',
+        searchTemplate: '/search?q={}',
+        suggestions: [
+          'r/r/unixporn',
+          'r/r/wallpaper',
+          'r/r/archlinux',
+          'r/r/catppuccin',
+        ],
+        url: 'https://www.reddit.com',
+      },
+    ],
+    [
+      'w',
+      {
+        name: 'Wikipedia',
+        searchTemplate: '/w/index.php?search={}',
+        suggestions: ['w/wiki/Portal:Current_events', 'w/wiki/Special:Random'],
+        url: 'https://en.wikipedia.org/wiki/Main_Page',
+      },
+    ],
+    [
+      '0',
+      {
+        name: 'localhost',
+        searchTemplate: ':{}',
+        suggestions: ['0 8384', '0 8000'],
+        url: 'http://localhost:3000',
+      },
+    ],
+  ]);
+</script>
+
+<template id="commands-template">
+  <style>
+    .commands {
+      columns: 1;
+      list-style: none;
+      margin: 0 auto;
+      max-width: 10rem;
+      padding: 0 0 0 var(--space-1);
+      width: 100vw;
+    }
+
+    .command {
+      display: flex;
+      gap: var(--space-2);
+      outline: 0;
+      padding: var(--space-1);
+      text-decoration: none;
+    }
+
+    .key {
+      color: var(--color-text);
+      display: inline-block;
+      text-align: center;
+      width: 3ch;
+    }
+
+    .name {
+      color: var(--color-text-subtle);
+      transition: color var(--transition-speed);
+    }
+
+    .command:where(:focus, :hover) .name {
+      color: var(--color-text);
+    }
+
+    @media (min-width: 500px) {
+      .commands {
+        columns: 2;
+        max-width: 20rem;
+      }
+    }
+
+    @media (min-width: 700px) {
+      .commands {
+        columns: 3;
+        max-width: 30rem;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .commands {
+        columns: 4;
+        max-width: 40rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .commands {
+        columns: 6;
+        max-width: 60rem;
+      }
+    }
+  </style>
+  <nav>
+    <menu class="commands"></menu>
+  </nav>
+</template>
+
+<template id="command-template">
+  <li>
+    <a class="command" rel="noopener noreferrer">
+      <span class="key"></span>
+      <span class="name"></span>
+    </a>
+  </li>
+</template>
+
+<script type="module">
+  class Commands extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+      const template = document.getElementById('commands-template');
+      const clone = template.content.cloneNode(true);
+      const commands = clone.querySelector('.commands');
+      const commandTemplate = document.getElementById('command-template');
+
+      for (const [key, { name, url }] of COMMANDS.entries()) {
+        if (!name || !url) continue;
+        const clone = commandTemplate.content.cloneNode(true);
+        const command = clone.querySelector('.command');
+        command.href = url;
+        if (CONFIG.openLinksInNewTab) command.target = '_blank';
+        clone.querySelector('.key').innerText = key;
+        clone.querySelector('.name').innerText = name;
+        commands.append(clone);
+      }
+
+      this.shadowRoot.append(clone);
+    }
+  }
+
+  customElements.define('commands-component', Commands);
+</script>
+
+<template id="search-template">
+  <style>
+    input,
+    button {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      background: transparent;
+      border: 0;
+      display: block;
+      outline: 0;
+    }
+
+    .dialog {
+      align-items: center;
+      background: var(--color-background);
+      border: none;
+      display: none;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      padding: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    .dialog[open] {
+      display: flex;
+    }
+
+    .form {
+      width: 100%;
+    }
+
+    .input {
+      color: var(--color-text);
+      font-size: var(--font-size-2);
+      font-weight: var(--font-weight-bold);
+      padding: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    .suggestions {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      margin: var(--space-2) 0 0;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .suggestion {
+      color: var(--color-text);
+      cursor: pointer;
+      font-size: var(--font-size-1);
+      padding: var(--space-2);
+      position: relative;
+      transition: color var(--transition-speed);
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    .suggestion:where(:focus, :hover) {
+      color: var(--color-background);
+    }
+
+    .suggestion::before {
+      background-color: var(--color-text);
+      bottom: var(--space-2);
+      content: ' ';
+      left: var(--space-2);
+      opacity: 0;
+      position: absolute;
+      right: var(--space-2);
+      top: var(--space-2);
+      transform: translateY(0.5em);
+      transition: all var(--transition-speed);
+      z-index: -1;
+    }
+
+    .suggestion:where(:focus, :hover)::before {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .match {
+      color: var(--color-text-subtle);
+      transition: color var(--transition-speed);
+    }
+
+    .suggestion:where(:focus, :hover) .match {
+      color: var(--color-background);
+    }
+
+    @media (min-width: 700px) {
+      .suggestions {
+        flex-direction: row;
+      }
+    }
+  </style>
+  <dialog class="dialog">
+    <form autocomplete="off" class="form" method="dialog" spellcheck="false">
+      <input class="input" title="search" type="text" />
+      <menu class="suggestions"></menu>
+    </form>
+  </dialog>
+</template>
+
+<template id="suggestion-template">
+  <li>
+    <button class="suggestion" type="button"></button>
+  </li>
+</template>
+
+<template id="match-template">
+  <span class="match"></span>
+</template>
+
+<script type="module">
+  class Search extends HTMLElement {
+    #dialog;
+    #form;
+    #input;
+    #suggestions;
+
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+      const template = document.getElementById('search-template');
+      // template.focus();
+      const clone = template.content.cloneNode(true);
+      this.#dialog = clone.querySelector('.dialog');
+      this.#form = clone.querySelector('.form');
+      this.#input = clone.querySelector('.input');
+      this.#suggestions = clone.querySelector('.suggestions');
+      this.#form.addEventListener('submit', this.#onSubmit, false);
+      this.#input.addEventListener('input', this.#onInput);
+      this.#suggestions.addEventListener('click', this.#onSuggestionClick);
+      document.addEventListener('keydown', this.#onKeydown);
+      this.shadowRoot.append(clone);
+    }
+
+    static #attachSearchPrefix(array, { key, splitBy }) {
+      if (!splitBy) return array;
+      return array.map((search) => `${key}${splitBy}${search}`);
+    }
+
+    static #escapeRegexCharacters(s) {
+      return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    }
+
+    static #fetchDuckDuckGoSuggestions(search) {
+      return new Promise((resolve) => {
+        window.autocompleteCallback = (res) => {
+          const suggestions = [];
+
+          for (const item of res) {
+            if (item.phrase === search.toLowerCase()) continue;
+            suggestions.push(item.phrase);
+          }
+
+          resolve(suggestions);
+        };
+
+        const script = document.createElement('script');
+        document.querySelector('head').appendChild(script);
+        script.src = `https://duckduckgo.com/ac/?callback=autocompleteCallback&q=${search}`;
+        script.onload = script.remove;
+      });
+    }
+
+    static #formatSearchUrl(url, searchPath, search) {
+      if (!searchPath) return url;
+      const [baseUrl] = Search.#splitUrl(url);
+      const urlQuery = encodeURIComponent(search);
+      searchPath = searchPath.replace(/{}/g, urlQuery);
+      return baseUrl + searchPath;
+    }
+
+    static #hasProtocol(s) {
+      return /^[a-zA-Z]+:\/\//i.test(s);
+    }
+
+    static #isUrl(s) {
+      return /^((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)$/i.test(s);
+    }
+
+    static #parseQuery = (raw) => {
+      const query = raw.trim();
+
+      if (this.#isUrl(query)) {
+        const url = this.#hasProtocol(query) ? query : `https://${query}`;
+        return { query, url };
+      }
+
+      if (COMMANDS.has(query)) {
+        const { command, key, url } = COMMANDS.get(query);
+        return command ? Search.#parseQuery(command) : { key, query, url };
+      }
+
+      let splitBy = CONFIG.commandSearchDelimiter;
+      const [searchKey, rawSearch] = query.split(new RegExp(`${splitBy}(.*)`));
+
+      if (COMMANDS.has(searchKey)) {
+        const { searchTemplate, url: base } = COMMANDS.get(searchKey);
+        const search = rawSearch.trim();
+        const url = Search.#formatSearchUrl(base, searchTemplate, search);
+        return { key: searchKey, query, search, splitBy, url };
+      }
+
+      splitBy = CONFIG.commandPathDelimiter;
+      const [pathKey, path] = query.split(new RegExp(`${splitBy}(.*)`));
+
+      if (COMMANDS.has(pathKey)) {
+        const { url: base } = COMMANDS.get(pathKey);
+        const [baseUrl] = Search.#splitUrl(base);
+        const url = `${baseUrl}/${path}`;
+        return { key: pathKey, path, query, splitBy, url };
+      }
+
+      const [baseUrl, rest] = Search.#splitUrl(CONFIG.defaultSearchTemplate);
+      const url = Search.#formatSearchUrl(baseUrl, rest, query);
+      return { query, search: query, url };
+    };
+
+    static #splitUrl(url) {
+      const parser = document.createElement('a');
+      parser.href = url;
+      const baseUrl = `${parser.protocol}//${parser.hostname}`;
+      const rest = `${parser.pathname}${parser.search}`;
+      return [baseUrl, rest];
+    }
+
+    #close() {
+      this.#input.value = '';
+      this.#input.blur();
+      this.#dialog.close();
+      this.#suggestions.innerHTML = '';
+    }
+
+    #execute(query) {
+      const { url } = Search.#parseQuery(query);
+      const target = CONFIG.openLinksInNewTab ? '_blank' : '_self';
+      window.open(url, target, 'noopener noreferrer');
+      this.#close();
+    }
+
+    #focusNextSuggestion(previous = false) {
+      const active = this.shadowRoot.activeElement;
+      let nextIndex;
+
+      if (active.dataset.index) {
+        const activeIndex = Number(active.dataset.index);
+        nextIndex = previous ? activeIndex - 1 : activeIndex + 1;
+      } else {
+        nextIndex = previous ? this.#suggestions.childElementCount - 1 : 0;
+      }
+
+      const next = this.#suggestions.children[nextIndex];
+      if (next) next.querySelector('.suggestion').focus();
+      else this.#input.focus();
+    }
+
+    #onInput = async () => {
+      const oq = Search.#parseQuery(this.#input.value);
+
+      if (!oq.query) {
+        this.#close();
+        return;
+      }
+
+      let suggestions = COMMANDS.get(oq.query)?.suggestions ?? [];
+
+      if (oq.search && suggestions.length < CONFIG.suggestionLimit) {
+        const res = await Search.#fetchDuckDuckGoSuggestions(oq.search);
+        const formatted = Search.#attachSearchPrefix(res, oq);
+        suggestions = suggestions.concat(formatted);
+      }
+
+      const nq = Search.#parseQuery(this.#input.value);
+      if (nq.query !== oq.query) return;
+      this.#renderSuggestions(suggestions, oq.query);
+    };
+
+    #onKeydown = (e) => {
+      if (!this.#dialog.open) {
+        this.#dialog.show();
+        this.#input.focus();
+
+        requestAnimationFrame(() => {
+          // close the search dialog before the next repaint if a character is
+          // not produced (e.g. if you type shift, control, alt etc.)
+          if (!this.#input.value) this.#close();
+        });
+
+        return;
+      }
+
+      if (e.key === 'Escape') {
+        this.#close();
+        return;
+      }
+
+      const alt = e.altKey ? 'alt-' : '';
+      const ctrl = e.ctrlKey ? 'ctrl-' : '';
+      const meta = e.metaKey ? 'meta-' : '';
+      const shift = e.shiftKey ? 'shift-' : '';
+      const modifierPrefixedKey = `${alt}${ctrl}${meta}${shift}${e.key}`;
+
+      if (/^(ArrowDown|Tab|ctrl-n)$/.test(modifierPrefixedKey)) {
+        e.preventDefault();
+        this.#focusNextSuggestion();
+        return;
+      }
+
+      if (/^(ArrowUp|ctrl-p|shift-Tab)$/.test(modifierPrefixedKey)) {
+        e.preventDefault();
+        this.#focusNextSuggestion(true);
+      }
+    };
+
+    #onSubmit = () => {
+      this.#execute(this.#input.value);
+    };
+
+    #onSuggestionClick = (e) => {
+      const ref = e.target.closest('.suggestion');
+      if (!ref) return;
+      this.#execute(ref.dataset.suggestion);
+    };
+
+    #renderSuggestions(suggestions, query) {
+      this.#suggestions.innerHTML = '';
+      const sliced = suggestions.slice(0, CONFIG.suggestionLimit);
+      const template = document.getElementById('suggestion-template');
+
+      for (const [index, suggestion] of sliced.entries()) {
+        const clone = template.content.cloneNode(true);
+        const ref = clone.querySelector('.suggestion');
+        ref.dataset.index = index;
+        ref.dataset.suggestion = suggestion;
+        const escapedQuery = Search.#escapeRegexCharacters(query);
+        const matched = suggestion.match(new RegExp(escapedQuery, 'i'));
+
+        if (matched) {
+          const template = document.getElementById('match-template');
+          const clone = template.content.cloneNode(true);
+          const matchRef = clone.querySelector('.match');
+          const pre = suggestion.slice(0, matched.index);
+          const post = suggestion.slice(matched.index + matched[0].length);
+          matchRef.innerText = matched[0];
+          matchRef.insertAdjacentHTML('beforebegin', pre);
+          matchRef.insertAdjacentHTML('afterend', post);
+          ref.append(clone);
+        } else {
+          ref.innerText = suggestion;
+        }
+
+        this.#suggestions.append(clone);
+      }
+    }
+  }
+
+  customElements.define('search-component', Search);
+</script>
+
+<template id="rain-template">
+  <style>
+    canvas {
+      left: 0;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
+  </style>
+  <canvas class="rain"></canvas>
+</template>
+
+<script type="module">
+  class Rain extends HTMLElement {
+    #backgroundColor;
+    #canvas;
+    #ctx;
+    #drops;
+    #lastRender;
+    #rainColor;
+    #rainHeight;
+    #rainWidth;
+
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+      const template = document.getElementById('rain-template');
+      const clone = template.content.cloneNode(true);
+      this.#canvas = clone.querySelector('.rain');
+      this.#ctx = this.#canvas.getContext('2d', { alpha: false });
+      this.#renderCanvas();
+      const rerender = Rain.debounce(this.#renderCanvas, CONFIG.rainFrameRate);
+      const mq = '(prefers-color-scheme: light)';
+      window.matchMedia(mq).addEventListener('change', rerender);
+      window.addEventListener('resize', rerender);
+      this.shadowRoot.append(clone);
+    }
+
+    static cssVar(name) {
+      return getComputedStyle(document.body).getPropertyValue(name);
+    }
+
+    static debounce(fn, delay) {
+      let timeout;
+
+      return () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => fn.apply(this, arguments), delay);
+      };
+    }
+
+    #renderCanvas = () => {
+      this.#canvas.height = window.innerHeight;
+      this.#canvas.width = window.innerWidth;
+      this.#rainWidth = Math.ceil(this.#canvas.width / CONFIG.rainColumns);
+      this.#rainHeight = this.#rainWidth * CONFIG.rainSpeed;
+      this.#backgroundColor = Rain.cssVar('--color-background');
+      this.#rainColor = Rain.cssVar('--color-rain');
+      this.#ctx.fillStyle = this.#backgroundColor;
+      this.#ctx.fillRect(0, 0, this.#canvas.width, this.#canvas.height);
+      this.#drops = new Array(CONFIG.rainColumns);
+      this.#lastRender = performance.now();
+      requestAnimationFrame(this.#renderRain);
+    };
+
+    #renderRain = (timestamp) => {
+      if (timestamp - this.#lastRender >= CONFIG.rainFrameRate) {
+        this.#ctx.fillStyle = this.#backgroundColor;
+        this.#ctx.globalAlpha = CONFIG.rainFade;
+        this.#ctx.fillRect(0, 0, this.#canvas.width, this.#canvas.height);
+        for (let i = 0; i < this.#drops.length; i++) {
+          this.#ctx.fillStyle = this.#rainColor;
+          this.#ctx.globalAlpha = 1;
+          const x = i * this.#rainWidth;
+          const y = this.#drops[i] * this.#rainHeight;
+          this.#ctx.fillRect(x, y, this.#rainWidth, this.#rainHeight);
+
+          if (this.#drops[i] <= 4) {
+            // fully fade out previous rain drop streak
+            this.#ctx.fillStyle = this.#backgroundColor;
+            this.#ctx.globalAlpha = this.#drops[i] === 4 ? 1 : 0.4;
+            const eraseY = y + this.#rainHeight;
+            const eraseHeight = this.#canvas.height - eraseY;
+            this.#ctx.fillRect(x, eraseY, this.#rainWidth, eraseHeight);
+          }
+
+          const reset = Math.random() > CONFIG.rainResilience;
+          if (reset || y > this.#canvas.height) this.#drops[i] = 0;
+          else this.#drops[i]++;
+        }
+
+        this.#lastRender = timestamp;
+      }
+
+      requestAnimationFrame(this.#renderRain);
+    };
+  }
+
+  customElements.define('rain-component', Rain);
+</script>
+
+<style>
+  html {
+    background-color: var(--color-background);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+  }
+
+  body {
+    margin: 0;
+  }
+
+  main {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: var(--space-3) var(--space-2);
+    position: relative;
+    width: 100vw;
+  }
+</style>
+
+<main>
+  <rain-component></rain-component>
+  <commands-component></commands-component>
+  <search-component></search-component>
+</main>
