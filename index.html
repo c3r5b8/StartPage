@@ -23,6 +23,7 @@
     --space-3: 4rem;
     --transition-speed: 200ms;
   }
+
   @media (prefers-color-scheme: light) {
     :root {
       --color-background: #eff1f5;
@@ -44,7 +45,7 @@
     rainFrameRate: 1000 / 20,
     rainResilience: 0.87,
     rainSpeed: 0.85,
-    suggestionLimit: 6,
+    suggestionLimit: 10,
   };
 
   const COMMANDS = new Map([
@@ -89,7 +90,7 @@
       {
         name: 'Arch linux',
         searchTemplate: '/packages/?sort=&q={}',
-        url : 'https://archlinux.org',
+        url: 'https://archlinux.org',
       },
     ],
     [
@@ -130,6 +131,7 @@
           'r/r/wallpaper',
           'r/r/archlinux',
           'r/r/catppuccin',
+          'r/r/ObsidianMD'
         ],
         url: 'https://www.reddit.com',
       },
