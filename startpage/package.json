@@ -1,0 +1,75 @@
+{
+  "name": "pomme-page",
+  "version": "0.4.3",
+  "description": "Big buttons with easy click startpage for a browser",
+  "author": "kikiklang",
+  "license": "MIT",
+  "source": "src/index.pug",
+  "scripts": {
+    "start": "parcel --open",
+    "build": "npm run clean && parcel build --no-source-maps",
+    "serve": "npx serve dist",
+    "clean": "rimraf -rf ./.parcel-cache && rimraf -rf ./dist",
+    "prettier": "prettier --write 'src/**/*.pug'",
+    "stylelint": "stylelint --fix './**/*.css'",
+    "xo": "xo  --env=browser --fix",
+    "format": "npm run clean && npm run prettier && npm run stylelint && npm run xo",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.3.2",
+    "@prettier/plugin-pug": "^1.19.2",
+    "autoprefixer": "^10.4.2",
+    "husky": "^7.0.4",
+    "parcel": "^2.3.2",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-color-format": "^1.1.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-group-selectors": "^1.0.8",
+    "xo": "^0.48.0"
+  },
+  "prettier": {
+    "printWidth": 130,
+    "singleQuote": true,
+    "bracketSpacing": true
+  },
+  "xo": {
+    "semicolon": false,
+    "space": true,
+    "rules": {
+      "node/prefer-global/process": 0
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "grid": true
+      }
+    }
+  },
+  "stylelint": {
+    "plugins": [
+      "stylelint-color-format",
+      "stylelint-group-selectors"
+    ],
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-rational-order"
+    ],
+    "rules": {
+      "selector-type-no-unknown": null,
+      "plugin/stylelint-group-selectors": true,
+      "color-format/format": {
+        "format": "hsl"
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
+  }
+}

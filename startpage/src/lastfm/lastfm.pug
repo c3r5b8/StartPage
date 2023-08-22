@@ -1,0 +1,27 @@
+// //////// LASTFM //////// //
+
+pp-lastfm
+  //- pp-binance-selector
+  p.lastfm-label
+  pp-lastfm-chart
+    //- canvas#lastfm-chart(height='220', width='220')
+    svg.lastfm-chart-svg(version='1.1', xmlns='http://www.w3.org/2000/svg', height='220', width='250')
+  //- pp-binance-chart-label last week
+  pp-lastfm-footer
+    pp-lastfm-difference
+      p.lastfm-this-week-label this week
+      p.lastfm-this-week
+    pp-lastfm-current
+      p.lastfm-today-label today
+      p.lastfm-today
+
+pp-lastfm-loader-container
+  pp-loader
+    pp-loader-dot
+    pp-loader-dot
+    pp-loader-dot
+    pp-loader-dot
+
+pp-lastfm-error-container
+  p.error-notification API error
+  p.lastfm-error-code
